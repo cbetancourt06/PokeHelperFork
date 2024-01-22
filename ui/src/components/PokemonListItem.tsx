@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pokemon } from 'pokenode-ts';
+import { Link } from 'react-router-dom';
 
 interface PokemonListItemProps {
   pokemon: Pokemon;
@@ -10,8 +11,8 @@ const PokemonListItem: React.FC<PokemonListItemProps> = ({ pokemon }) => {
       {!!pokemon.sprites.front_default && (
         <img className="w-28" src={pokemon.sprites.front_default} alt={pokemon.name + '-image'} />
       )}
-
-      <p className="w-full justify-center text-center text-black">{pokemon.name}</p>
+      <Link className="w-full justify-center text-center text-black" to={`/pokemon/${pokemon.name}`}>{pokemon.name}</Link>
+      {/* <p className="w-full justify-center text-center text-black">{pokemon.name}</p> */}
     </li>
   );
 };

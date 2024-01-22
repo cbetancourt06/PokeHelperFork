@@ -25,7 +25,7 @@ const LoginForm: React.FC = () => {
       const userId = await PokeHelperService.putApiLogin({ name: values.userName });
       setCurrentUserId(userId);
       toast.success(`Welcome ${values.userName}`);
-      navigate('/');
+      navigate('/home');
     } catch (e) {
       toast.error('Failed to login');
     }
